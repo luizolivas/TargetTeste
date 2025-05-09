@@ -25,6 +25,10 @@ namespace TesteTecnicoTargetErp.Exercicio
 
                 foreach (var dado in dados)
                 {
+                    if( dado.Valor == 0)
+                    {
+                        continue;
+                    }
                     if(dado.Valor < menorValorEncontrado)
                     {
                         menorValorEncontrado = dado.Valor;
@@ -36,17 +40,19 @@ namespace TesteTecnicoTargetErp.Exercicio
                     vendasPorDia.Add(dado.Valor);
                 }
 
-                double media = ObtemMediaValor(vendasPorDia);
+                double media = ObtemMediaMensal(vendasPorDia);
+
 
                 Console.WriteLine($"Valor média: {media}");
-                Console.WriteLine("Valores acima da média: ");
-                foreach (var valor in vendasPorDia)
+                Console.WriteLine("Dias acima da média: ");
+                foreach (var dado in dados)
                 {
-                    if (valor > media)
+                    if (dado.Valor > media)
                     {
-                        Console.WriteLine(valor);
+                        Console.WriteLine($"Dia: {dado.Dia}");
                     }
                 }
+
                 Console.WriteLine($"Menor valor: {menorValorEncontrado}");
                 Console.WriteLine($"Maior valor: {maiorValorEncontrado}");
 
@@ -58,9 +64,10 @@ namespace TesteTecnicoTargetErp.Exercicio
 
         } 
 
-        public static double ObtemMediaValor(List<Double> doubles)
+        public static double ObtemMediaMensal(List<Double> doubles)
         {
             double soma = doubles.Sum();
+            Console.WriteLine("Para teste " + soma);
             int quantidade = doubles.Count;
             double media = soma / quantidade;
 
