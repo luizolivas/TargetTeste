@@ -8,7 +8,7 @@ using TesteTecnicoTargetErp.Models;
 
 namespace TesteTecnicoTargetErp.Exercicio
 {
-    internal class Exercicio3
+    public class Exercicio3
     {
         public static void Executar()
         {

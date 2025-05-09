@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TesteTecnicoTargetErp.Exercicio
 {
-    internal class Exercicio1
+    public class Exercicio1
     {
         public static void Executar()
         {
