@@ -19,11 +19,10 @@ internal class Program
             Console.Write("Digite a opção desejada: ");
             opcao = int.Parse(Console.ReadLine());
 
-            // Executando o exercício escolhido
             switch (opcao)
             {
                 case 1:
-                    Exercicio1.Executar(); // Chama diretamente o método estático
+                    Exercicio1.Executar(); 
                     break;
                 case 2:
                     Exercicio2.Executar();
